@@ -274,7 +274,7 @@ class FileOutputWriter(object):
                     self._file_object.write((
                         '{}\t0x{:X}\t{}\t{}\t0x{:X}\t{}\t0x{:X}\t0x{:X}\t{}\t'
                         '{}\t{}\t({})\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t'
-                        '{}\n').format(
+                        '{}\t{}\n').format(
                             log[0], log[1], log[2], log[3], log[4], log[5],
                             log[6], log[7], log[8], log[9], log[10], log[11],
                             log[12], log[13], log[14], log[15], log[16],

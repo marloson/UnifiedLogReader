@@ -14,7 +14,7 @@ import os
 import struct
 import sys
 
-import lz4.block
+import lz4.block  # type: ignore[import-not-found]
 
 
 def DecompressFile(input_path, output_path):

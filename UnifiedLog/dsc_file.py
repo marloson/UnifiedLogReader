@@ -147,7 +147,7 @@ class Dsc(data_format.BinaryDataFormat):
 
         logger.debug("Uuid entry values")
         for uuid_entry in self.uuid_entries:
-            logger.debug("{0:d} {1:d} {2!s} {3:s} {3:s}".format(
+            logger.debug("{0:d} {1:d} {2!s} {3:s} {4:s}".format(
                 uuid_entry[0], uuid_entry[1], uuid_entry[2], uuid_entry[3],
                 uuid_entry[4]))
 

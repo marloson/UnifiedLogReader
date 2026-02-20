@@ -2,13 +2,13 @@
 '''The tracev3 file parser.'''
 
 import binascii
-import lz4.block
+import lz4.block  # type: ignore[import-not-found]
 import ipaddress
 import re
 import struct
 from uuid import UUID
 
-import biplist
+import biplist  # type: ignore[import-not-found]
 
 from UnifiedLog import data_format
 from UnifiedLog import dsc_file
@@ -736,9 +736,9 @@ class TraceV3(data_format.BinaryDataFormat):
 
     def DebugPrintLog(self, file_pos, cont_time, timestamp, thread, level_type, activity, pid, euid, ttl, p_name, lib, sub_sys, cat, msg, signpost):
         time_string = self._ReadAPFSTime(timestamp)
-        logger.debug('{} (0x{:X}) {} ({}) 0x{:X} {} 0x{:X} {} {} '.format(
+        logger.debug('{} (0x{:X}) {} ({}) 0x{:X} {} 0x{:X} {} {} {} '.format(
             self._debug_log_count, file_pos, time_string, cont_time, thread,
-            level_type, activity, pid, euid, ttl, p_name) + \
+            level_type, activity, pid, euid, ttl) + \
                     ( '[{}] '.format(signpost) if signpost else '') + \
                       '{}: '.format(p_name) + \
                     ( '({}) '.format(lib) if lib else '') + \

@@ -39,7 +39,7 @@ import os
 import struct
 from uuid import UUID
 
-import lz4.block
+import lz4.block  # type: ignore[import-not-found]
 
 from UnifiedLog import dsc_file
 from UnifiedLog import logger
