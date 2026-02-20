@@ -16,7 +16,7 @@ try:  # for pip >= 10
     from pip._internal.req import parse_requirements
 except ImportError:  # for pip <= 9.0.3
     from pip.download import PipSession
-    from pip.req import parse_requirements
+    from pip.req import parse_requirements  # type: ignore[no-redef]
 
 # Change PYTHONPATH to include UnifiedLog so that we can get the version.
 sys.path.insert(0, '.')
@@ -57,7 +57,7 @@ setup(
         ('share/doc/UnifiedLog', [
             'LICENSE.txt', 'README.md']),
     ],
-    install_requires=[str(req.req) for req in parse_requirements(
+    install_requires=[str(req.req) for req in parse_requirements(  # type: ignore[attr-defined]
         'requirements.txt', session=PipSession(),
     )],
 )
